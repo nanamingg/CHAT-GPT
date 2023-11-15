@@ -1,5 +1,18 @@
 const ChatView = ({ chatList }) => {
-  return <div className="bg-red-100 grow">Main</div>;
+  return (
+    <div className="bg-red-100 grow">
+      <ul>
+        {chatList.length === 0
+          ? "채팅이 없습니다."
+          : chatList.map((v, i) => (
+              <li>
+                <div>{v.answer}</div>
+                <div>{v.question}</div>
+              </li>
+            ))}
+      </ul>
+    </div>
+  );
 };
 
 export default ChatView;
